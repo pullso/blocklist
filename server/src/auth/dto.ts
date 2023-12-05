@@ -1,4 +1,3 @@
-import { SignUpBodyDto } from './dto';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class SignUpBodyDto {
