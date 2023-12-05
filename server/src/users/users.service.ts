@@ -9,7 +9,7 @@ export class UsersService {
     return this.db.user.findFirst({ where: { email } });
   }
 
-  create(email: string, hash: string, salt: string) {
-    this.db.user.create({ data: { email, hash, salt } });
+  async create(email: string, hash: string, salt: string) {
+    return await this.db.user.create({ data: { email, hash, salt } });
   }
 }
