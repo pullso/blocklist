@@ -3,7 +3,7 @@ import {DbService} from "../db/db.service";
 import {AddBlockItemDto, BlockListQueryDto} from "./dto";
 
 @Injectable()
-export class BlocklistService {
+export class BlockListService {
   constructor(private db: DbService) {
   }
 
