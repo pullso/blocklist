@@ -1,6 +1,5 @@
 import {Inter} from 'next/font/google'
-import {useEffect} from "react";
-import {authControllerGetSessionInfo, authControllerSignIn} from "@/shared/api/generated";
+import {authControllerGetSessionInfo} from "@/shared/api/generated";
 import {useQuery} from "@tanstack/react-query";
 import {UiButton} from "@/shared/ui/ui-button";
 
@@ -12,8 +11,6 @@ export default function HomePage() {
     queryFn: () => authControllerGetSessionInfo()
   })
 
-  // TODO remove console
-  console.log(data, `: data`)
   return (
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
