@@ -3,6 +3,7 @@ import { authControllerGetSessionInfo } from "@/shared/api/generated";
 import { useQuery } from "@tanstack/react-query";
 import { UiButton } from "@/shared/ui/ui-button";
 import { UiTextField } from "@/shared/ui/ui-text-field";
+import { UiSelectField } from "@/shared/ui/ui-select-field";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,6 +33,7 @@ export default function HomePage() {
         inputProps={{ placeholder: "placeholder text" }}
       />
       <UiTextField inputProps={{ placeholder: "placeholder text" }} />
+      <UiSelectField options={[{ value: "1", label: "options" }]} />
     </main>
   );
 }
