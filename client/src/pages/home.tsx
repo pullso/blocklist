@@ -1,11 +1,11 @@
-import { Inter } from "next/font/google";
 import { authControllerGetSessionInfo } from "@/shared/api/generated";
 import { useQuery } from "@tanstack/react-query";
 import { UiButton } from "@/shared/ui/ui-button";
 import { UiTextField } from "@/shared/ui/ui-text-field";
 import { UiSelectField } from "@/shared/ui/ui-select-field";
-
-const inter = Inter({ subsets: ["latin"] });
+import { UiLink } from "@/shared/ui/ui-link";
+import { UiSpinner } from "@/shared/ui/ui-spinner";
+import { UiHeader } from "@/shared/ui/ui-header";
 
 export default function HomePage() {
   const { data } = useQuery({
@@ -14,10 +14,8 @@ export default function HomePage() {
   });
 
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      {data?.email}
+    <main className={"min-h-screen"}>
+      <UiHeader right={<div>{data?.email}</div>}></UiHeader>
       <UiButton variant="primary">test</UiButton>
       <UiButton variant="secondary">test</UiButton>
       <UiButton variant="outlined">sign out</UiButton>
@@ -34,6 +32,8 @@ export default function HomePage() {
       />
       <UiTextField inputProps={{ placeholder: "placeholder text" }} />
       <UiSelectField options={[{ value: "1", label: "options" }]} />
+      <UiLink href={"https://www.google.com"}>test</UiLink>
+      <UiSpinner className="text-teal-600 w-10 h-10" />
     </main>
   );
 }
