@@ -4,6 +4,7 @@ import clsx from "clsx";
 
 export function UiHeader({
   className,
+  right,
 }: {
   className?: string;
   right?: React.ReactNode;
@@ -16,6 +17,7 @@ export function UiHeader({
       )}
     >
       <UiLogo></UiLogo>
+      {right}
     </header>
   );
 }

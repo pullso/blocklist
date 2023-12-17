@@ -1,21 +1,24 @@
-import { authControllerGetSessionInfo } from "@/shared/api/generated";
-import { useQuery } from "@tanstack/react-query";
 import { UiButton } from "@/shared/ui/ui-button";
 import { UiTextField } from "@/shared/ui/ui-text-field";
 import { UiSelectField } from "@/shared/ui/ui-select-field";
 import { UiLink } from "@/shared/ui/ui-link";
 import { UiSpinner } from "@/shared/ui/ui-spinner";
 import { UiHeader } from "@/shared/ui/ui-header";
+import { SignOutButton } from "@/features/auth";
+import { useSessionQuery } from "@/entities";
 
 export default function HomePage() {
-  const { data } = useQuery({
-    queryKey: ["session"],
-    queryFn: () => authControllerGetSessionInfo(),
-  });
-
+  const { data } = useSessionQuery();
   return (
     <main className={"min-h-screen"}>
-      <UiHeader right={<div>{data?.email}</div>}></UiHeader>
+      <UiHeader
+        right={
+          <div>
+            {data?.email}
+            <SignOutButton />
+          </div>
+        }
+      ></UiHeader>
       <UiButton variant="primary">test</UiButton>
       <UiButton variant="secondary">test</UiButton>
       <UiButton variant="outlined">sign out</UiButton>
