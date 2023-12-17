@@ -13,8 +13,8 @@ export function useSignInForm() {
   const router = useRouter();
   const signInMutation = useMutation({
     mutationFn: authControllerSignIn,
-    async onSuccess() {
-      await router.push(ROUTES.HOME);
+    onSuccess() {
+      router.push(ROUTES.HOME);
     },
   });
 

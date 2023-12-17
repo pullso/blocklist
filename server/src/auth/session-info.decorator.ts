@@ -1,5 +1,5 @@
-import { ExecutionContext, createParamDecorator } from '@nestjs/common';
+import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 
-export const SessionInfo = createParamDecorator(
-  (_, ctx: ExecutionContext) => ctx.switchToHttp().getRequest().session,
-);
+export const SessionInfo = createParamDecorator((_, ctx: ExecutionContext) => {
+  return ctx.switchToHttp().getRequest().session;
+});
