@@ -1,11 +1,9 @@
 import { UiHeader } from "@/shared/ui/ui-header";
 import ToggleBlockingButton from "@/features/toggle-blocking/ui/toggle-blocking-button";
 import Profile from "@/widgets/profile";
-import { useBlockListQuery } from "@/entities/block-list";
 import { AddBlockItemForm, BlockList } from "@/features/block-list";
 
 export default function HomePage() {
-  const { data } = useBlockListQuery({});
   return (
     <div className={"min-h-screen flex flex-col"}>
       <UiHeader right={<Profile />}></UiHeader>

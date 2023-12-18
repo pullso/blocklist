@@ -17,7 +17,7 @@ export function BlockList({ className }: { className?: string }) {
         inputProps={{ value: q, onChange: (e) => setQ(e.target.value) }}
       />
       <div className="rounded-xl bg-slate-100/50 px-10 py-6 flex flex-col gap-3">
-        {isLoading && <UiSpinner className="text-teal-600 w-10 h-10 mx-auto" />}
+        {isLoader && <UiSpinner className="text-teal-600 w-10 h-10 mx-auto" />}
         {isEmptyList && (
           <div className="text-xl py-1 text-center">List is empty...</div>
         )}
