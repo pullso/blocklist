@@ -1,3 +1,6 @@
+import { useSessionQuery } from "@/entities/session";
+
 export function HomePage() {
-  return <div>Home Page</div>;
+  const { data: session } = useSessionQuery();
+  return <div>Home Page{session?.email}</div>;
 }
